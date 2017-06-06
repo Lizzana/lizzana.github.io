@@ -1,0 +1,422 @@
+body{
+	font-family:terminal;
+}
+.mainbody{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: scroll;
+}
+.mainbody::-webkit-scrollbar{
+	width: 0;
+}
+/*灯泡*/
+.change{
+	top: -1.5rem;
+	right: 4rem;
+	background: #FFFF00;
+	width: 0.1rem;
+	height: 10rem;
+	z-index: 10;
+}
+/*.change:after{
+	position: absolute;
+	bottom: -1rem;
+	left:-0.5rem;
+	content: "";
+	width: 1rem;
+	height: 1rem;
+	background: #FFFF00;
+	border-radius: 50%;
+}*/
+.change img{
+	bottom: -1.5rem;
+	left:-1.5rem;
+	content: "";
+	width: 3rem;
+	height: 3rem;
+	animation: circle 8s infinite linear;
+	transform: rotate(0deg) translate(5rem);
+}
+.star{
+	display: none;
+}
+@keyframes circle{
+	0%{
+		transform: rotate(0deg);
+	}
+	50%{
+		transform: rotate(180deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+header{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+/*主题*/
+header div{
+	display: inline-block;
+	height: auto;
+}
+header img{
+	width: 2rem;
+}
+
+/*内容动画*/
+.up{
+	letter-spacing: 0.4rem;
+	font-size: 1.8rem;
+	position: relative;
+	animation: ups 3s ;
+}
+.down{
+	letter-spacing: 0.4rem;
+	font-size: 1.8rem;
+	position: relative;
+	animation: downs 3s ;
+}
+@keyframes  ups{
+	from{
+		top: -2.5rem;
+	}
+	to{
+		top:0;
+	}
+}
+@keyframes  downs{
+	from{
+		bottom: -2.5rem;
+	}
+	to{
+		bottom:0;
+	}
+}
+/*主要内容*/
+/*intro*/
+.intro{
+	width: 100%;
+	height: 100vh;	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+}
+.intro-title{
+	top: 0;	
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	line-height: 2rem;
+	text-align: center;
+	font-size: 0;
+	animation: titles 1.6s linear 0.6s forwards;	
+}
+.title-border{
+	border: 1px solid #fff;
+	opacity: 0;
+	border-radius: 20px;
+	height: 2rem;
+	width: 3.5rem;
+	animation: btn 1.6s linear 0.6s forwards;
+}
+@keyframes titles{
+	0%{
+        font-size: 0;
+	}
+	100%{
+		font-size: 1.5rem;
+	}
+}
+@keyframes  btn{
+	0%{
+		opacity: 0;
+		padding: 0;
+		transform: scale(1);
+	}
+	50%{
+		opacity: 0.5;
+		padding: 0;
+	}
+	100%{
+		opacity: 1;
+		padding:0.4rem 2.75rem;
+		transform: scale(1);
+	}
+}
+/*school*/
+.intro_details{
+	margin-top: 3rem;
+	width: 100%;
+	display: flex;
+}
+.intro_details div{
+	flex: 1;
+	opacity: 0;
+}
+.intro_details img{
+	max-width: 3rem;
+}
+.school{
+	animation: fadeIn .8s linear both 1.3s;
+}
+.work{
+	animation: fadeIn .8s linear both 1.8s;
+}
+.major{
+	animation: fadeIn .8s linear both 2.3s;
+}
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+		transform: scale(1);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+/*分割*/
+.divide{
+	width: 100%;
+	height: 100vh;
+	
+}
+/*照片*/
+.photo{
+	width: 100%;
+	font-size: 0;
+	background: #fff	
+}
+.photo div{
+	/*background: #fff;*/
+	width: 100%;
+	/*margin:5vh 5% 0 5%;*/
+	vertical-align: top;
+	display: inline-block;
+	overflow: hidden;
+	height:10rem;
+}
+.photo img{
+	width: 100%;		
+	vertical-align: top;
+	transition: .3s;
+	z-index: 4;
+}
+
+.photoInfo{
+	z-index: 2;
+	top: 0;
+	width: 100%;
+	height: 0;
+	line-height: 1.2rem;
+	color: #999;
+	font-size: 1.2rem;
+	transition: .3s;
+	background: #fff;
+	overflow: hidden;
+	text-align: center;
+}
+.FirstPhoto{
+}
+.FirstPhoto:hover .photoImg{
+	margin-top: 4rem;
+}
+.FirstPhoto:hover .photoInfo{
+	height: 5rem;
+	border-radius: 0 0 50% 50%;
+	z-index: 6;	
+	padding: 1rem 0;
+}
+#photo_left{
+	display: inline-block;
+	width:40%;
+	height: 20rem;
+}
+#girl{
+	width: 60%;
+	height: 20rem;
+}
+#cat{
+    width: 100%;
+    height:10rem;
+}
+/*作品*/
+.product{
+	width:100%;
+	display: flex;
+	font-size: 1rem;
+	
+}
+.product div{
+	flex: 1;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/*作品列表*/
+.details .roateimg{
+	transform: rotateY(0deg);
+	transition: all 0.5s ease-in-out 0s;
+	width: 100%;
+	background: #F4F4F4;
+} 
+.details:hover .roateimg{
+	transform: rotateY(-90deg);
+	
+} 
+/*翻转内容*/
+.details:hover .details_tx{
+	transform: rotateY(0deg);
+}
+.details .details_tx{
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0.8;
+	text-align: center;
+	transform: rotateY(90deg);
+	transition: all 0.5s ease-in-out 0s;
+	/*background: linear-gradient(to bottom, #4481eb 0%,#04befe 100%);*/
+	background:#F4F4F4;
+	color: #666;
+}
+
+/*底部*/
+footer{
+	width: 100%;
+	display: flex;
+	padding: 1rem 0;
+	
+}
+footer p{
+	font-size: 0.9rem;
+}
+footer .ibk{
+	flex: 1;
+	
+}
+footer img{
+	width: 1.8rem;
+	margin-bottom: 0.9rem;
+}
+#tell{
+	width: 2.7rem;
+	margin: 0;
+}
+
+.footer-bg{
+    left: 0;
+    right: 0;
+	top: 0;
+	bottom: 0;
+	background: #f4f4f4;
+	opacity: 0.5;
+}
+
+/*学校*/
+
+/*动画*/
+.ainmate-layer{
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+	z-index: 0;
+	
+}
+.ainmate-layer .cloud{
+	background-repeat: no-repeat;
+	
+	background-image: url('../img/cloud (1).png');
+	z-index: 0;
+	position: absolute;
+}
+.cloud-01{
+	top: 11%;
+	left: 116%;
+	width: 229px;
+	height: 57px;
+	background-position:0 0 ;
+	animation-duration:108s ;
+	animation-delay: -84.6s;
+	border-bottom: 1px solid #999999;
+	animation: fly1 32s linear infinite backwards;
+}
+.cloud-02{
+	top: 45%;
+	left: 88%;
+	width: 116px;
+	height: 32px;
+	background-position:0 -57px;
+	animation-duration:79.2s ;
+	animation-delay: -7.74s;
+	border-bottom: 1px solid #999999;
+	animation: fly2 21s linear infinite backwards;
+}
+.cloud-03{
+	top: 65%;
+	left: 1%;
+	width: 120px;
+	height: 38px;
+	background-position:0 -89px;
+	animation-duration:90s;
+	animation-delay: -73.6s;
+	border-bottom: 1px solid #999999;
+	animation: fly3 40s linear infinite backwards;
+}
+.cloud-04{
+	top: 85%;
+	left: 1%;
+	width: 157px;
+	height: 46px;
+	background-position:0 -127px;
+	animation-duration:64.8s;
+	animation-delay: -4.14s;
+	border-bottom: 1px solid #999999;
+	animation: fly4 26s linear infinite backwards;
+}
+@keyframes fly1{
+	0%{
+		left: 101%;
+	}
+	100%{
+		left: -20%;
+		}
+}
+@keyframes fly2{
+	0%{
+		left: 102%;
+	}
+	100%{
+		left: -20%;
+		}
+}
+@keyframes fly3{
+	0%{
+		left: 109%;
+	}
+	100%{
+		left: -20%;
+		}
+}
+@keyframes fly4{
+	0%{
+		left: 123%;
+	}
+	100%{
+		left: -20%;
+		}
+}
+
